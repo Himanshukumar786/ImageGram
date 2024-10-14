@@ -1,9 +1,9 @@
 import express from 'express';
 import connectDB from './config/dbconfig.js';
 
-const PORT = 3000; 
+const PORT = 3000; // PORT number
 
-const app = express(); 
+const app = express(); // create express app server instance
 
 app.get('/ping', (req, res) => {
     return res.json({message : 'Pong'});

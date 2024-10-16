@@ -10,7 +10,22 @@ app.get('/ping', (req, res) => {
     return res.json({message : 'Pong'});
 });
 
-app.post('/posts', createPost);
+function m1(req, res, next){
+    console.log('m1');
+    next();
+}
+
+function m2(req, res, next){
+    console.log('m2');
+    next();
+}
+
+function m3(req, res, next){
+    console.log('m3');
+    next();
+}
+
+app.post('/posts', m1, m2, m3, createPost);
 
 app.listen(PORT, () => {
     console.log(`Server is running on ${PORT}`);
